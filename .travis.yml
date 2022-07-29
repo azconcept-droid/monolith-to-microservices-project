@@ -17,14 +17,14 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker tag reverseproxy adegneus/reverseproxy:v2
-  - docker tag udagram-api-user adegneus/udagram-api-user:v2
-  - docker tag udagram-api-feed adegneus/udagram-api-feed:v2
-  - docker tag udagram-frontend adegneus/udagram-frontend:v2
+  - docker tag reverseproxy azconcept-droid/reverseproxy:v2
+  - docker tag udagram-api-user azconcept-droid/udagram-api-user:v2
+  - docker tag udagram-api-feed azconcept-droid/udagram-api-feed:v2
+  - docker tag udagram-frontend azconcept-droid/udagram-frontend:v2
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push adegneus/reverseproxy:v2
-  - docker push adegneus/udagram-api-user:v2
-  - docker push adegneus/udagram-api-feed:v2
-  - docker push adegneus/udagram-frontend:v2
+  - docker push azconcept-droid/reverseproxy:v2
+  - docker push azconcept-droid/udagram-api-user:v2
+  - docker push azconcept-droid/udagram-api-feed:v2
+  - docker push azconcept-droid/udagram-frontend:v2
