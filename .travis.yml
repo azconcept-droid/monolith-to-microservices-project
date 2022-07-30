@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 16
+  - 16.15.1
 
 services:
   - docker
@@ -17,14 +17,14 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker tag reverseproxy azconcept-droid/reverseproxy:v2
-  - docker tag udagram-api-user azconcept-droid/udagram-api-user:v2
-  - docker tag udagram-api-feed azconcept-droid/udagram-api-feed:v2
-  - docker tag udagram-frontend azconcept-droid/udagram-frontend:v2
+  - docker tag reverseproxy YalectHub/reverseproxy:v2
+  - docker tag udagram-api-user YalectHub/udagram-api-user:v2
+  - docker tag udagram-api-feed YalectHub/udagram-api-feed:v2
+  - docker tag udagram-frontend YalectHub/udagram-frontend:v2
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push azconcept-droid/reverseproxy:v2
-  - docker push azconcept-droid/udagram-api-user:v2
-  - docker push azconcept-droid/udagram-api-feed:v2
-  - docker push azconcept-droid/udagram-frontend:v2
+  - docker push YalectHub/reverseproxy:v2
+  - docker push YalectHub/udagram-api-user:v2
+  - docker push YalectHub/udagram-api-feed:v2
+  - docker push YalectHub/udagram-frontend:v2
