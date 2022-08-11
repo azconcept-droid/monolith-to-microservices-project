@@ -4,9 +4,9 @@ metadata:
   name: env-configmap
 data:
   POSTGRES_DB: postgres
-  POSTGRES_HOST: database-1.c020fgx8stzo.us-east-1.rds.amazonaws.com
+  POSTGRES_HOST: database-1.cey5q3bpgb1e.us-east-1.rds.amazonaws.com
   AWS_REGION: us-east-1
-  AWS_PROFILE: default
-  AWS_BUCKET: project-162760234586-dev
+  AWS_PROFILE: yalectmicro
+  AWS_BUCKET: my-424752689993-bucket
   JWT_SECRET: testing
   URL: http://localhost:8100
