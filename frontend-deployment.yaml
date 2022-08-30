@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yalecthub/udagram-frontend:v2
+        image: yalecthub/udagram-frontend:v1
         ports:
         - containerPort: 8080
         resources:
